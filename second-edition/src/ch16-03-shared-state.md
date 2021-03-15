@@ -249,7 +249,7 @@ error[E0382]: use of moved value: `counter`
 error: aborting due to 2 previous errors
 ```
 
-아하! 첫번째 에러 메세지는 `counter`가 `handle`과 연괸된 스레드에 대한 클로저
+아하! 첫번째 에러 메세지는 `counter`가 `handle`과 연관된 스레드에 대한 클로저
 내부로 이동되었음을 나타냅니다. 이 이동이 우리가 두번째 스레드에서 `lock`의
 호출을 시도하고 `num2`에 결과를 저장할 때 `counter`를 캡처하는 것을 방지합니다!
 따라서 러스트는 우리가 `counter`의 소유권을 여러 스레드로 이동시킬 수 없음을
